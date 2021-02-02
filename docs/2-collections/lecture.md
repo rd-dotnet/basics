@@ -1,4 +1,8 @@
-<img src="EPAM_LOGO_Primary.png?raw=true" style="width:1in;height:0.35417in" />
+<img src="img\media\EPAM_LOGO_Primary.png?raw=true" style="width:1in;height:0.35417in" />
+
+<img src="img\media\EPAM_LOGO_Primary.png" style="width:1in;height:0.35417in" />
+
+<img src="img\media\logo.jpg?raw=true" style="width:1in;height:0.35417in" />
 
 | <span id="_Toc34388731" class="anchor"></span>Коллекции в .NET |
 |----------------------------------------------------------------|
