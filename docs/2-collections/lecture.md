@@ -1,4 +1,4 @@
-<img src="myMediaFolder\media\image1.emf" style="width:1in;height:0.35417in" />
+<img src="img\media\logo.jpg?raw=true" style="width:1in;height:0.35417in" />
 
 | <span id="_Toc34388731" class="anchor"></span>Коллекции в .NET |
 |----------------------------------------------------------------|
