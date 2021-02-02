@@ -1,8 +1,6 @@
-![EPAM Logo](img\media\EPAM_LOGO_Primary.png?raw=true =550x225)
+<img src="img\media\EPAM_LOGO_Primary.png?raw=true" width="550" />
 
-<img src="img\media\EPAM_LOGO_Primary.png?raw=true" style="width:550px;height:225px" />
-
-#Коллекции в .NET 
+# Коллекции в .NET 
 
 Содержание
 
