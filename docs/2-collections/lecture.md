@@ -102,17 +102,17 @@
 также пример обращения к элементам массива.
 
 ```
-int\[\] myArray = new int\[5\];
+int[] myArray = new int[5];
 
-myArray\[0\] = 1;
+myArray[0] = 1;
 
-myArray\[1\] = 2;
+myArray[1] = 2;
 
-myArray\[4\] = 5;
+myArray[4] = 5;
 
-int first = array\[1\];
+int first = array[1];
 
-int last = array\[4\];
+int last = array[4];
 ```
 
 В .NET существует множество способов инициализации массивов:
@@ -303,20 +303,20 @@ LinkedList&lt;int&gt; myLinkedList = new LinkedList&lt;int&gt;();
 коллекции необходимо указать тип, с которым она будет работать:
 
 ```
-List&lt;int&gt; myList = new List&lt;int&gt;();
+List<int> myList = new List<int>();
 
 myList.Add(1);
 
 myList.Add(15);
 
-int number = myList\[0\];
+int number = myList[0];
 ```
 
 Благодаря указанию типа при создании, разработчику нет необходимости
 преобразовывать элементы коллекции к конкретному типу, как это
 необходимо было делать с ArrayList.
 
-Помимо этого класс List&lt;T&gt; предоставляет разработчикам множество
+Помимо этого класс `List<T>` предоставляет разработчикам множество
 методов, которые выполняют самые часто используемые операции при работе
 с коллекциями:
 [Add](https://docs.microsoft.com/ru-ru/dotnet/api/system.collections.generic.list-1.add?view=netframework-4.8),
@@ -361,27 +361,26 @@ int number = myList\[0\];
 значение из коллекции. Ниже описан пример создания такой коллекции:
 
 ```
-Dictionary&lt;int, string&gt; myDictionary = new Dictionary&lt;int,
-string&gt;();
+Dictionary<int, string> myDictionary = new Dictionary<int, string>();
 
 myDictionary.Add(1, “Hello”);
 
 myDIctionary.Add(2, “World”);
 
-string world = myDictionary\[2\];
+string world = myDictionary[2];
 ```
 
 Вот несколько особенностей словаря:
 
--   Ключь элемента словаря не должен быть равен null.
+-   Ключь элемента словаря не должен быть равен `null`.
 
 -   В качестве ключа и значения может быть использован любой тип.
 
 -   В качестве хэш значения элемента словаря используется результат
-    выполнения функции GetHashCode объекта, который используется в
+    выполнения функции `GetHashCode` объекта, который используется в
     качестве ключа. В связи с этим нужно быть осторожным при
     использовании в качестве ключа ссылочные типы, так как функция
-    GetHashCode имеет погрешность.
+    `GetHashCode` имеет погрешность.
 
 ### Представление в памяти
 
@@ -405,9 +404,9 @@ string world = myDictionary\[2\];
 понимаете, что один конкретный ключ ассоциируется с конкретным
 значением, то словарь отлично подходит, но если по задаче требуется
 просто хранить две коллекции и обеспечивать их целостность (порядок
-элементов) до лучше подумать попробовать использовать List&lt;T&gt;, а в
+элементов) до лучше подумать попробовать использовать `List<T>`, а в
 качестве типа использовать собственный тип или, к примеру, класс
-KeyValuePaie&lt;TKey, TValue&gt;, об этом классе будет рассказано ниже.
+`KeyValuePair<TKey, TValue>`, об этом классе будет рассказано ниже.
 
 ### Дополнительно
 
@@ -426,14 +425,13 @@ List&lt;T&gt;) когда требуется в качестве элемент�
 Вот пример использования KeyValuePair&lt;TKey, TValue&gt; класса:
 
 ```
-List&lt;KeyValuePair&lt;int, string&gt;&gt; myList = new
-List&lt;KeyValuePair&lt;int, string&gt;&gt;();
+List<KeyValuePair<int, string>> myList = new List<KeyValuePair<int, string>>();
 
-myList.Add(new KeyValuePair&lt;int, string&gt;(1, “Hello”));
+myList.Add(new KeyValuePair<int, string>(1, “Hello”));
 
-myList.Add(new KeyValuePair&lt;int, string&gt;(2, “World”));
+myList.Add(new KeyValuePair<int, string>(2, “World”));
 
-KeyValuePair&lt;int, string&gt; item = myList\[0\];
+KeyValuePair<int, string> item = myList[0];
 
 int key = item.Key;
 
@@ -449,7 +447,7 @@ string value = item.Value;
 
 Чтобы отсортировать массив, можно воспользоваться методом класса Array:
 ```
-int\[\] myArray = new int\[\] { 1, 6, 3, 8, 5, 2 };
+int[] myArray = new int[] { 1, 6, 3, 8, 5, 2 };
 
 Array.Sort(myArray);
 ```
@@ -467,7 +465,7 @@ Array.Sort(myArray);
 Для сотрировки динамического массива можно восспользоваться его
 собственным методом Sort:
 ```
-List&lt;int&gt; myList = new List&lt;int&gt; { 1, 4, 6, 3, 2, 9, 7 };
+List<int> myList = new List<int> { 1, 4, 6, 3, 2, 9, 7 };
 
 myList.Sort();
 ```
@@ -479,17 +477,16 @@ myList.Sort();
 Но вот пример одной из них:
 
 ```
-myList.Sort((left, right) =&gt;
+myList.Sort((left, right) =>
+            {
 
-{
+                if (left > right) return 1;
 
-if (left &gt; right) return 1;
+                if (left < right) return -1;
 
-if (left &lt; rifht) return -1;
+                return 0;
 
-return 0;
-
-})
+            })
 ```
 
 В примере выше используется перегрузка метода Sort которая принимает в
@@ -536,7 +533,7 @@ IComparable и предоставлял метод, который описыв�
 [Contains](https://docs.microsoft.com/ru-ru/dotnet/api/system.collections.generic.list-1.contains?view=netframework-4.8).
 
 ```
-List&lt;int&gt; myList = new List&lt;int&gt; { 1,2,6,4,8,6,9 };
+List<int> myList = new List<int> { 1,2,6,4,8,6,9 };
 
 bool hasValue = myList.Contains(1); // будет true
 ```
@@ -555,7 +552,7 @@ User user2 = new User(“name2”);
 
 User user3 = new User(“name3”);
 
-List&lt;User&gt; users = new List&lt;User&gt; { user1, user2, user3 }
+List<User> users = new List<User> { user1, user2, user3 }
 
 bool hasValue = users.Contains(user1); // будет true
 ```
@@ -605,38 +602,26 @@ override, например так:
 
 ```
 class User
+    {
+        public string Name { get; set; }
 
-{
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
 
-public string Name { get; set; }
+            if (obj is User)
+            {
+                User anotherUser = (User)obj;
 
-public override bool Equals(object obj)
+                return this.Name == anotherUser.Name;
+            }
 
-{
-
-if (obj == null)
-
-{
-
-return false;
-
-}
-
-if (obj is User)
-
-{
-
-User anotherUser = (User)obj;
-
-return this.Name == anotherUser.Name;
-
-}
-
-return false;
-
-}
-
-}
+            return false;
+        }
+    }
 ```
 
 В описаном выше примере представлен класс User с единственным свойством
@@ -731,77 +716,47 @@ GetHashCode:
 IEquatable&lt;T&gt; в нашем примере:
 
 ```
-class User : **IEquatable&lt;User&gt;**
+class User : IEquatable<User>
+    {
+        public string Name { get; set; }
 
-{
+        public bool Equals(User other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
 
-public string Name { get; set; }
+            if (this.Name == other.Name)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-**public bool Equals(User other)**
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
 
-{
+            User user = obj as User;
 
-if (other == null)
+            if (user == null)
 
-{
-
-return false;
-
-}
-
-if (this.Name == other.Name)
-
-{
-
-return true;
-
-}
-
-else
-
-{
-
-return false;
-
-}
-
-}
-
-public override bool Equals(Object obj)
-
-{
-
-if (obj == null)
-
-{
-
-return false;
-
-}
-
-User user = obj```
-[as](https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/operators/type-testing-and-cast#as-operator)
-```User;
-
-if (user == null)
-
-{
-
-return false;
-
-}
-
-else
-
-{
-
-**return Equals(user);**
-
-}
-
-}
-
-}
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(user);
+            }
+        }
+    }
 ```
 
 Не стоит забывать о базовой реализации метода Equals, чтобы не сломать
@@ -811,7 +766,7 @@ else
 
 Чтобы обеспечить базовую поддержку поиска и сравнения в .NET необходимо
 переопределить в вашем классе методы Equals и GetHashCode. Интерфейс
-IEquatable&lt;T&gt; можно использовать для удобства, он не обязателен.
+`IEquatable<T>` можно использовать для удобства, он не обязателен.
 
 # Вопросы
 
@@ -831,9 +786,9 @@ IEquatable&lt;T&gt; можно использовать для удобства,
 
 5.  Что такое обобщённая коллекция и чем она отличается от необобщённой?
 
-6.  Какую структуру описывает класс List&lt;T&gt;?
+6.  Какую структуру описывает класс `List<T>`?
 
-7.  Как устроен Dictionary&lt;TKey, TValue&gt;?
+7.  Как устроен `Dictionary<TKey, TValue>`?
 
 8.  Как отсортировать массив значимы типов или строк?
 
