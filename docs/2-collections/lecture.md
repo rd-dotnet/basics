@@ -1,4 +1,4 @@
-<img src="img\media\EPAM_LOGO_Primary.png?raw=true" width="550" />
+<img src="img\media\EPAM_LOGO_Primary.png?raw=true" width="330" />
 
 # Коллекции в .NET 
 
