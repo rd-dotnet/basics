@@ -1,9 +1,8 @@
-<img src="task_media\media\image1.png" style="width:96px;height:34px" />
+<img src="..\..\resources\EPAM_LOGO_Primary.png?raw=true" width="330" />
 
-| ADO.NET |
-|---------|
+# ADO.NET 
 
-#  Задание
+##  Задание
 
 **Note**: В качестве базы данных используйте любую доступную вам базу. Это
     может быть общедоступная база

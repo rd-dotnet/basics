@@ -1,7 +1,6 @@
-<img src="lecture_media\media\image1.png" style="width:96px;height:34px" />
+<img src="..\..\resources\EPAM_LOGO_Primary.png?raw=true" width="330" />
 
-| Работа с файловой системой в .NET |
-|-----------------------------------|
+# Работа с файловой системой в .NET 
 
 Содержание
 
