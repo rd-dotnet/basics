@@ -5,7 +5,6 @@
 
 ## Содержание
 
-[Делегаты в .NET]
 
 [1 Введение](#введение)
 
@@ -13,7 +12,7 @@
 
 [3 Анонимные функции](#анонимные-функции)
 
-[4 Delegate vs MulticastDelegate vs delegate 5](#delegate-vs-multicastdelegate-vs-delegate)
+[4 Delegate vs MulticastDelegate vs delegate](#delegate-vs-multicastdelegate-vs-delegate)
 
 [5 Применение делегатов](#применение-делегатов)
 
@@ -90,10 +89,8 @@ public static void PrintMessage(string message)
 MyDelegate delegateInstance = PrintMessage;
 ```
 
-1.  Оператор
-    [*nameof*](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/nameof)
-    возвращает название члена класса, типа или переменной в виде
-    строки-константы
+Оператор [*nameof*](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/nameof)
+возвращает название члена класса, типа или переменной в виде строки-константы.
 
 После того, как был создан экземпляр делегата, можно выполнить вызов
 этого делегата как обычного метода. Этот вызов будет передаваться или,
@@ -127,10 +124,10 @@ delegateInstance("Hello World!");
 
 Лямбда-выражения могут записываться в одной из следующих форм:
 
-1.  (входные параметры) => выражение, когда требуется выполнить
+1.  `(входные параметры) => выражение`, когда требуется выполнить
     только одну строчку кода.
 
-2.  (входные параметры) => { блок инструкций }, когда надо выполнить
+2.  `(входные параметры) => { блок инструкций }`, когда надо выполнить
     несколько действий.
 
 Для создания анонимного метода используется *оператор delegate.* Его
@@ -217,8 +214,7 @@ public static void DemostrateMulticastDelegateInherirance()
 }
 ```
 
-2.  Описание предопределенных делегатов представлено ниже в [разделе
-   ](#стандартные-типы-делегатов).
+Описание предопределенных делегатов представлено ниже в [разделе](#стандартные-типы-делегатов).
 
 Выполнение приведенного выше кода выведет на консоль следующий
 результат, который говорит о том, что все делегаты, как кастомные, так и
@@ -280,18 +276,17 @@ Console.WriteLine(myIntDelegate());
 и
 [Func&lt;T&gt;](https://docs.microsoft.com/ru-ru/dotnet/api/system.func-2?view=netframework-4.8).
 
-Тип делегата Action является стандартным делегатом *действия без
+Тип делегата `Action` является стандартным делегатом *действия без
 возвращаемого результата,* следовательно, типом возвращаемого значения
 методов, на которые может ссылаться делегат такого типа, является void.
-Может принимать до 16 входных параметров. Тип делегата Action&lt;T&gt;
+Может принимать до 16 входных параметров. Тип делегата `Action<T>`
 можно было бы переписать в следующем представлении:
 
 `public delegate void Action<T>(T value);`
 
 Тип делегата `Func`, напротив, предусматривает обязательное выходное
 значение. Может принимать до 16 входных параметров. Тип делегата
-`Func<T, TResult>` можно было бы переписать в следующем
-представлении:
+`Func<T, TResult>` можно было бы переписать в следующем представлении:
 
 `public delegate TResult Func<T,TResult>(T value);`
 
@@ -343,8 +338,8 @@ ref](https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/
 [Использование ключевого слова
 out](https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/out-parameter-modifier)
 
-[Функция обратного вызова
-(Callback)](https://ru.wikipedia.org/wiki/Callback_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
+[Функция обратного вызова 
+Callback](https://ru.wikipedia.org/wiki/Callback_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
 
 [Использование вариативности в
 делегатах](https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates)
