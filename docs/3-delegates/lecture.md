@@ -339,7 +339,7 @@ ref](https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/
 out](https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/out-parameter-modifier)
 
 [Функция обратного вызова 
-Callback](https://ru.wikipedia.org/wiki/Callback_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
+(Callback)](https://ru.wikipedia.org/wiki/Callback_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5))
 
 [Использование вариативности в
 делегатах](https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates)
