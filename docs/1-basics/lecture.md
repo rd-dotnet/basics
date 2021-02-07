@@ -1,8 +1,6 @@
 <img src="..\..\resources\EPAM_LOGO_Primary.png?raw=true" width="330" />
 
-# Базовые конструкции C\# и Общая теория .NET |
-
-
+# Базовые конструкции C\# и Общая теория .NET 
 
 ## Содержание
 
