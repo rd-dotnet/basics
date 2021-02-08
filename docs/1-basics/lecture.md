@@ -1,10 +1,6 @@
 <img src="..\..\resources\EPAM_LOGO_Primary.png?raw=true" width="330" />
 
-# Базовые конструкции C\# и Общая теория .NET 
-
-## Содержание
-
-[Базовые конструкции C\# и Общая теория .NET](#_Toc38018587)
+# Базовые конструкции C\# и Общая теория .NET
 
 [1 Введение](#введение)
 
@@ -2731,11 +2727,6 @@ Airplane и Rocket так в чем же разница?
 
 -   [Интерфейсы в C\#
     MSDN](https://docs.microsoft.com/ru-ru/dotnet/csharp/programming-guide/interfaces/)
-
-Дополнительные материалы вы так же можете найти на нашем сайте: [Курс
-.Net C\#](https://dotnetcourseweb.azurewebsites.net/)
-
-<img src="lecture_media\image201.png" style="width:1.125in;height:1.12955in" />
 
 # Вопросы
 

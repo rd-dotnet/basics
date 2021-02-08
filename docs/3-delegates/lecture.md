@@ -2,10 +2,6 @@
 
 # Делегаты в .NET
 
-
-## Содержание
-
-
 [1 Введение](#введение)
 
 [2 Что такое делегат](#что-такое-делегат)
@@ -362,11 +358,3 @@ out](https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/
 7.  Какое значение вернет вызов делегата, содержащего несколько методов?
 
 8.  Основные применения делегатов.
-
-| REVISION HISTORY |                       |                 |             |          |                |
-|------------------|-----------------------|-----------------|-------------|----------|----------------|
-| Ver.             | Description of Change | Author          | Date        | Approved |                |
-|                  |                       |                 |             | Name     | Effective Date |
-| 0.1              | Initial version       | Dmitry Sorokin1 | 12-MAR-2020 |          | 12-MAR-2020    |
-|                  |                       |                 |             |          |                |
-|                  |                       |                 |             |          |                |

@@ -1,10 +1,6 @@
 <img src="..\..\resources\EPAM_LOGO_Primary.png?raw=true" width="330" />
 
-# Коллекции в .NET 
-
-Содержание
-
-[Коллекции в .NET](#_Toc34388731)
+# Коллекции в .NET
 
 [1 Введение](#введение)
 
@@ -103,15 +99,10 @@
 
 ```
 int[] myArray = new int[5];
-
 myArray[0] = 1;
-
 myArray[1] = 2;
-
 myArray[4] = 5;
-
 int first = array[1];
-
 int last = array[4];
 ```
 
@@ -188,13 +179,12 @@ int last = array[4];
 Ниже представлен пример создания динамического массива и его
 использование:
 
+```
 ArrayList myDynamicArray = new ArrayList();
-
 myDynamicArray.Add(1);
-
 myDynamicArray.Add(8);
-
-object first = myDynamicArray\[0\];
+object first = myDynamicArray[0];
+```
 
 Вот несколько особенностей динамического массива в .NET:
 
@@ -248,7 +238,7 @@ object first = myDynamicArray\[0\];
 LinkedList&lt;&gt; (подробнее об обобщённых классах будет рассказано
 позже). Ниже представлен пример создания такого списка:
 
-LinkedList&lt;int&gt; myLinkedList = new LinkedList&lt;int&gt;();
+`LinkedList<int> myLinkedList = new LinkedList<int>();`
 
 Вот несколько особенностей списка:
 
@@ -304,11 +294,8 @@ LinkedList&lt;int&gt; myLinkedList = new LinkedList&lt;int&gt;();
 
 ```
 List<int> myList = new List<int>();
-
 myList.Add(1);
-
 myList.Add(15);
-
 int number = myList[0];
 ```
 
@@ -362,11 +349,8 @@ int number = myList[0];
 
 ```
 Dictionary<int, string> myDictionary = new Dictionary<int, string>();
-
 myDictionary.Add(1, “Hello”);
-
 myDIctionary.Add(2, “World”);
-
 string world = myDictionary[2];
 ```
 
@@ -426,15 +410,10 @@ List&lt;T&gt;) когда требуется в качестве элемент�
 
 ```
 List<KeyValuePair<int, string>> myList = new List<KeyValuePair<int, string>>();
-
 myList.Add(new KeyValuePair<int, string>(1, “Hello”));
-
 myList.Add(new KeyValuePair<int, string>(2, “World”));
-
 KeyValuePair<int, string> item = myList[0];
-
 int key = item.Key;
-
 string value = item.Value;
 ```
 
@@ -446,9 +425,9 @@ string value = item.Value;
 учитывает различные алгоритмы сортировки с учётом размерности массива.
 
 Чтобы отсортировать массив, можно воспользоваться методом класса Array:
+
 ```
 int[] myArray = new int[] { 1, 6, 3, 8, 5, 2 };
-
 Array.Sort(myArray);
 ```
 
@@ -466,7 +445,6 @@ Array.Sort(myArray);
 собственным методом Sort:
 ```
 List<int> myList = new List<int> { 1, 4, 6, 3, 2, 9, 7 };
-
 myList.Sort();
 ```
 
@@ -478,15 +456,11 @@ myList.Sort();
 
 ```
 myList.Sort((left, right) =>
-            {
-
-                if (left > right) return 1;
-
-                if (left < right) return -1;
-
-                return 0;
-
-            })
+{
+    if (left > right) return 1;
+    if (left < right) return -1;
+    return 0;
+})
 ```
 
 В примере выше используется перегрузка метода Sort которая принимает в
@@ -534,7 +508,6 @@ IComparable и предоставлял метод, который описыв�
 
 ```
 List<int> myList = new List<int> { 1,2,6,4,8,6,9 };
-
 bool hasValue = myList.Contains(1); // будет true
 ```
 
@@ -547,13 +520,9 @@ bool hasValue = myList.Contains(1); // будет true
 
 ```
 User user1 = new User(“name1”);
-
 User user2 = new User(“name2”);
-
 User user3 = new User(“name3”);
-
 List<User> users = new List<User> { user1, user2, user3 }
-
 bool hasValue = users.Contains(user1); // будет true
 ```
 
@@ -562,7 +531,6 @@ bool hasValue = users.Contains(user1); // будет true
 
 ```
 User existingUser = new User(“name1”);
-
 bool hasAnotherValue = users.Contains(existingUser); // будет false
 ```
 
@@ -602,26 +570,25 @@ override, например так:
 
 ```
 class User
+{
+    public string Name { get; set; }
+
+    public override bool Equals(object obj)
     {
-        public string Name { get; set; }
-
-        public override bool Equals(object obj)
+        if (obj == null)
         {
-            if (obj == null)
-            {
-                return false;
-            }
-
-            if (obj is User)
-            {
-                User anotherUser = (User)obj;
-
-                return this.Name == anotherUser.Name;
-            }
-
             return false;
         }
+
+        if (obj is User)
+        {
+            User anotherUser = (User)obj;
+            return this.Name == anotherUser.Name;
+        }
+
+        return false;
     }
+}
 ```
 
 В описаном выше примере представлен класс User с единственным свойством
@@ -717,46 +684,46 @@ IEquatable&lt;T&gt; в нашем примере:
 
 ```
 class User : IEquatable<User>
+{
+    public string Name { get; set; }
+
+    public bool Equals(User other)
     {
-        public string Name { get; set; }
-
-        public bool Equals(User other)
+        if (other == null)
         {
-            if (other == null)
-            {
-                return false;
-            }
-
-            if (this.Name == other.Name)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
-        public override bool Equals(Object obj)
+        if (this.Name == other.Name)
         {
-            if (obj == null)
-            {
-                return false;
-            }
-
-            User user = obj as User;
-
-            if (user == null)
-
-            {
-                return false;
-            }
-            else
-            {
-                return Equals(user);
-            }
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
+
+    public override bool Equals(Object obj)
+    {
+        if (obj == null)
+        {
+            return false;
+        }
+
+        User user = obj as User;
+
+        if (user == null)
+
+        {
+            return false;
+        }
+        else
+        {
+            return Equals(user);
+        }
+    }
+}
 ```
 
 Не стоит забывать о базовой реализации метода Equals, чтобы не сломать
@@ -795,13 +762,3 @@ class User : IEquatable<User>
 9.  Как отсортировать массив пользовательских типов?
 
 10. Как работает поиск элементов в коллекции?
-
-###  
-
-| REVISION HISTORY |                       |                    |             |          |                |
-|------------------|-----------------------|--------------------|-------------|----------|----------------|
-| Ver.             | Description of Change | Author             | Date        | Approved |                |
-|                  |                       |                    |             | Name     | Effective Date |
-| 0.1              | Initial version       | Alexander Sokolov1 | 15-FEB-2020 |          | 15-FEB-2020    |
-|                  |                       |                    |             |          |                |
-|                  |                       |                    |             |          |                |
