@@ -1,3 +1,3 @@
- # 1 - Общая теория и базовые конструкции языка C#
+ # 1 - РћР±С‰Р°СЏ С‚РµРѕСЂРёСЏ Рё Р±Р°Р·РѕРІС‹Рµ РєРѕРЅСЃС‚СЂСѓРєС†РёРё СЏР·С‹РєР° C#
 
- [Презентация - основы](https://rd-dotnet.github.io/basics/docs/1-basics/lecture.md)
+ [РџСЂРµР·РµРЅС‚Р°С†РёСЏ - РѕСЃРЅРѕРІС‹](https://rd-dotnet.github.io/basics/docs/1-basics/1-lecture.htm)
