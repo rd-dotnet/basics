@@ -4,12 +4,12 @@
 
 ##  Задание
 
-**Note**: В качестве базы данных используйте любую доступную вам базу. Это
+> **Note**: В качестве базы данных используйте любую доступную вам базу. Это
     может быть общедоступная база
-    [NothWind](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases)
+    [NorthWind](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases)
     или любая база из курса по проектированию баз данных.
 
-**Note**: Выбранная для работы таблица должна содержать несоставной Primary
+> **Note**: Выбранная для работы таблица должна содержать несоставной Primary
     Key, желательно (но не обязательно) числового типа.
 
 ### Основное
